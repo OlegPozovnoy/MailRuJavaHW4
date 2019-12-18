@@ -69,9 +69,7 @@ public class ContextImpl implements Context, Runnable {
     }
 
     public void interrupt() {
-        synchronized (lock) {
-            isInterrupted = true;
-        }
+        isInterrupted = true;
     }
 
     public boolean isFinished() {
