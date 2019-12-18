@@ -9,5 +9,4 @@ public interface Context {
     void onFinish(Runnable callback);
     ExecutionStatistics getStatistics();
     void awaitTermination();
-    public boolean isInterrupted();
 }
