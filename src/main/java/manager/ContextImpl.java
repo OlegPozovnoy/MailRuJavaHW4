@@ -25,7 +25,7 @@ public class ContextImpl implements Context, Runnable {
 
     public void run() {
         // на всякий случай чтобы 2 раза нельзя было запускать как Runnable
-        synchronized (this) {
+        synchronized (lock) {
             if (!isStarted)
                 isStarted = true;
             else
@@ -50,7 +50,7 @@ public class ContextImpl implements Context, Runnable {
         // говорим что завершились
         synchronized (lock) {
             isFinished = true;
-            lock.notify();
+            lock.notifyAll();
         }
         callback.ifPresent(Runnable::run);
     }
