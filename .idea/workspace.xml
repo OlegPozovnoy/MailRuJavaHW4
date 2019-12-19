@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e58139a-6627-4f7e-bbe4-5038465be73e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/manager/ContextImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/ContextImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/manager/ExecutionStatisticsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/ExecutionStatisticsImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -45,12 +44,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="14" />
-          <entry key="java" value="6942" />
+          <entry key="java" value="6943" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6942" />
+          <entry key="JAVA" value="6943" />
           <entry key="PLAIN_TEXT" value="14" />
         </counts>
       </usages-collector>
@@ -61,15 +60,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/manager/ExecutionStatisticsImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="44" lean-forward="true" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+            <state relative-caret-position="289">
+              <caret line="17" column="65" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
               <folding>
                 <element signature="e#437#438#0" expanded="true" />
                 <element signature="e#494#495#0" expanded="true" />
                 <element signature="e#539#540#0" expanded="true" />
                 <element signature="e#597#598#0" expanded="true" />
                 <element signature="e#645#646#0" expanded="true" />
-                <element signature="e#717#718#0" expanded="true" />
+                <element signature="e#718#719#0" expanded="true" />
                 <element signature="e#1053#1054#0" expanded="true" />
                 <element signature="e#1107#1108#0" expanded="true" />
               </folding>
@@ -128,7 +127,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/manager/ContextImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
+            <state relative-caret-position="950">
               <caret line="56" selection-start-line="56" selection-end-line="56" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -734,7 +733,7 @@
       <updated>1576558980844</updated>
       <workItem from="1576558984349" duration="22301000" />
       <workItem from="1576686413312" duration="11239000" />
-      <workItem from="1576726298096" duration="5285000" />
+      <workItem from="1576726298096" duration="5480000" />
     </task>
     <servers />
   </component>
@@ -771,7 +770,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38825000" />
+    <option name="totallyTimeSpent" value="39020000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -904,16 +903,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/manager/ExecutionManagerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/manager/ContextImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
+        <state relative-caret-position="950">
           <caret line="56" selection-start-line="56" selection-end-line="56" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -925,17 +917,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/manager/ExecutionManagerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/manager/ExecutionStatisticsImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="44" lean-forward="true" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+        <state relative-caret-position="289">
+          <caret line="17" column="65" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
           <folding>
             <element signature="e#437#438#0" expanded="true" />
             <element signature="e#494#495#0" expanded="true" />
             <element signature="e#539#540#0" expanded="true" />
             <element signature="e#597#598#0" expanded="true" />
             <element signature="e#645#646#0" expanded="true" />
-            <element signature="e#717#718#0" expanded="true" />
+            <element signature="e#718#719#0" expanded="true" />
             <element signature="e#1053#1054#0" expanded="true" />
             <element signature="e#1107#1108#0" expanded="true" />
           </folding>

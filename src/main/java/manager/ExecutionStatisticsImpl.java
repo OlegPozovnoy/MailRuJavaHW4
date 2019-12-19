@@ -15,7 +15,7 @@ public class ExecutionStatisticsImpl implements ExecutionStatistics {
     }
 
     public int getAverageExecutionTimeInMs() {
-        return zeroIfNoTasks(totalExecutionTime / tasksAccounted);
+        return tasksAccounted == 0 ? 0 : totalExecutionTime / tasksAccounted;
     }
 
     public void addExecutionTime(int executionTime) {
@@ -25,7 +25,7 @@ public class ExecutionStatisticsImpl implements ExecutionStatistics {
         totalExecutionTime += executionTime;
     }
 
-    private int zeroIfNoTasks(int value) {
+    private int zeroIfNoTasks(int value){
         return tasksAccounted == 0 ? 0 : value;
     }
 
