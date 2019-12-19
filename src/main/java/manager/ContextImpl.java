@@ -25,7 +25,7 @@ public class ContextImpl implements Context, Runnable {
 
     public void run() {
         // на всякий случай чтобы 2 раза нельзя было запускать как Runnable
-        synchronized (lock) {
+        synchronized (this) {
             if (!isStarted)
                 isStarted = true;
             else
