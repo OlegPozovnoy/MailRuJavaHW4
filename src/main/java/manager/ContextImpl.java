@@ -9,8 +9,8 @@ public class ContextImpl implements Context, Runnable {
     private final Object lock = new Object();
     private int interruptedTaskCount = 0;
     private volatile boolean isInterrupted = false;
-    private volatile boolean isFinished = false;
-    private volatile boolean isStarted = false;
+    private boolean isFinished = false;
+    private boolean isStarted = false;
     private List<Thread> threads = new ArrayList<>();
     private List<RunnableWithStatistics> runnables = new ArrayList<>();
     private Optional<Runnable> callback = Optional.empty();
@@ -25,32 +25,37 @@ public class ContextImpl implements Context, Runnable {
 
     public void run() {
         // на всякий случай чтобы 2 раза нельзя было запускать как Runnable
-        if (!isStarted) {
-            isStarted = true;
-            // стартуем
-            for (Runnable runnable : runnables)
-                if (!isInterrupted) {
-                    Thread thread = new Thread(runnable);
-                    threads.add(thread);
-                    thread.start();
-                } else {
-                    interruptedTaskCount = runnables.size() - threads.size();
-                }
-            // ждем завершения
-            for (Thread thread : threads) {
-                try {
-                    thread.join();
-                } catch (InterruptedException ignore) {
-                }
-            }
-            // говорим что завершились
-            synchronized (lock) {
-                isFinished = true;
-                lock.notify();
-            }
-            callback.ifPresent(Runnable::run);
+        synchronized (lock) {
+            if (!isStarted)
+                isStarted = true;
+            else
+                return;
         }
+        // стартуем
+        for (Runnable runnable : runnables)
+            if (!isInterrupted) {
+                Thread thread = new Thread(runnable);
+                threads.add(thread);
+                thread.start();
+            } else {
+                interruptedTaskCount = runnables.size() - threads.size();
+            }
+        // ждем завершения
+        for (Thread thread : threads) {
+            try {
+                thread.join();
+            } catch (InterruptedException ignore) {
+            }
+        }
+        // говорим что завершились
+        synchronized (lock) {
+            isFinished = true;
+            lock.notify();
+        }
+        callback.ifPresent(Runnable::run);
     }
+
+}
 
     public int getCompletedTaskCount() {
         return (int) runnables.stream().map(RunnableWithStatistics::getState)
