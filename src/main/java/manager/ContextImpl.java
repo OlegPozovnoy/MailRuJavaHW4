@@ -55,8 +55,6 @@ public class ContextImpl implements Context, Runnable {
         callback.ifPresent(Runnable::run);
     }
 
-}
-
     public int getCompletedTaskCount() {
         return (int) runnables.stream().map(RunnableWithStatistics::getState)
                 .filter(t -> t == RunnableWithStatistics.State.SUCCESS)

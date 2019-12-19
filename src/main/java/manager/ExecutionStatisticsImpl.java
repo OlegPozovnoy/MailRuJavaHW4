@@ -7,15 +7,15 @@ public class ExecutionStatisticsImpl implements ExecutionStatistics {
     private int totalExecutionTime;
 
     public int getMinExecutionTimeInMs() {
-        return tasksAccounted == 0 ? 0 : minExecutionTimeInMs;
+        return zeroIfNoTasks(minExecutionTimeInMs);
     }
 
     public int getMaxExecutionTimeInMs() {
-        return tasksAccounted == 0 ? 0 : maxExecutionTimeInMs;
+        return zeroIfNoTasks(maxExecutionTimeInMs);
     }
 
     public int getAverageExecutionTimeInMs() {
-        return tasksAccounted == 0 ? 0 : totalExecutionTime / tasksAccounted;
+        return zeroIfNoTasks(totalExecutionTime / tasksAccounted);
     }
 
     public void addExecutionTime(int executionTime) {
@@ -23,6 +23,10 @@ public class ExecutionStatisticsImpl implements ExecutionStatistics {
         maxExecutionTimeInMs = Math.max(executionTime, maxExecutionTimeInMs);
         tasksAccounted += 1;
         totalExecutionTime += executionTime;
+    }
+
+    private int zeroIfNoTasks(int value) {
+        return tasksAccounted == 0 ? 0 : value;
     }
 
     @Override
